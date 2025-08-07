@@ -28,14 +28,14 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Surface Colors */
-    --card: 0 0% 100%; /* white cards */
+    --card: 213 68% 95%; /* #E6F0FA - azul claro para cards e botões */
     --card-foreground: 222.2 84% 4.9%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     
     /* Neutral Colors */
-    --secondary: 210 40% 96.1%; /* very light gray */
+    --secondary: 213 68% 95%; /* #E6F0FA - azul claro para botões secundários */
     --secondary-foreground: 222.2 47.4% 11.2%;
     
     --muted: 210 40% 96.1%;
@@ -46,7 +46,7 @@
     
     /* Form Elements */
     --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --input: 213 68% 95%; /* #E6F0FA - azul claro para inputs */
     --ring: 213 94% 68%; /* match primary */
     
     /* Medical UI Specific */
@@ -129,10 +129,10 @@
   
   /* Form styling */
   .medical-input {
-    @apply w-full px-4 py-3 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 border border-input rounded-lg bg-card focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200;
   }
   
   .medical-textarea {
-    @apply w-full px-4 py-3 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200 min-h-[120px] resize-y;
+    @apply w-full px-4 py-3 border border-input rounded-lg bg-card focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200 min-h-[120px] resize-y;
   }
 }
