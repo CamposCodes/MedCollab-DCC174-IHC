@@ -13,9 +13,9 @@
     --foreground: 222.2 84% 4.9%; /* dark text */
     
     /* Brand Colors */
-    --primary: 213 94% 68%; /* #2563EB - professional blue */
-    --primary-foreground: 210 40% 98%; /* white text on blue */
-    --primary-hover: 213 94% 60%; /* slightly darker blue for hover */
+    --primary: 212 100% 36%; /* #0057B8 - azul sólido profissional */
+    --primary-foreground: 210 40% 98%; /* mantém branco para contraste */
+    --primary-hover: 212 100% 30%; /* azul mais escuro para hover (#004080) */
     
     /* Medical Status Colors */
     --success: 158 64% 52%; /* #10B981 - green for answered cases */
@@ -28,14 +28,14 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Surface Colors */
-    --card: 213 68% 95%; /* #E6F0FA - azul claro para cards e botões */
+    --card: 212 100% 97%; /* azul bem claro para cards (#F3F8FC) */
     --card-foreground: 222.2 84% 4.9%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     
     /* Neutral Colors */
-    --secondary: 213 68% 95%; /* #E6F0FA - azul claro para botões secundários */
+    --secondary: 212 100% 97%; /* azul bem claro para botões secundários (#F3F8FC) */
     --secondary-foreground: 222.2 47.4% 11.2%;
     
     --muted: 210 40% 96.1%;
@@ -45,12 +45,12 @@
     --accent-foreground: 222.2 47.4% 11.2%;
     
     /* Form Elements */
-    --border: 213 94% 68%; /* thin blue border */
+    --border: 212 100% 36%; /* borda azul sólida */
     --input: 0 0% 100%; /* #FFFFFF - white background for inputs */
-    --ring: 213 94% 68%; /* match primary */
+    --ring: 212 100% 36%; /* igual ao primary */
     
     /* Medical UI Specific */
-    --medical-header: 213 94% 68%; /* primary blue for headers */
+    --medical-header: 212 100% 36%; /* azul sólido para headers */
     --medical-pending: 45 93% 47%; /* orange for pending */
     --medical-answered: 158 64% 52%; /* green for answered */
     --medical-returned: 0 84% 60%; /* red for returned */
@@ -70,7 +70,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 212 100% 90%; /* azul claro para dark mode (#D6E9FA) */
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -82,7 +82,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 212 100% 36%;
   }
 }
 
@@ -107,13 +107,17 @@
   .status-pending {
     @apply bg-warning text-warning-foreground;
   }
-  
+
   .status-answered {
     @apply bg-success text-success-foreground;
   }
-  
+
   .status-returned {
     @apply bg-destructive text-destructive-foreground;
+  }
+
+  .status-all {
+    @apply bg-secondary text-primary border border-primary;
   }
 }
 
@@ -134,5 +138,12 @@
   
   .medical-textarea {
     @apply w-full px-4 py-3 border border-input rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200 min-h-[120px] resize-y;
+  }
+  
+  /* Footer active item highlight */
+  .footer-active {
+    @apply bg-white shadow-card rounded-xl border border-primary text-primary;
+    /* Extra: transição suave para feedback visual */
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
   }
 }

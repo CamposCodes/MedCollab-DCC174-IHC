@@ -42,27 +42,33 @@ const Dashboard = () => {
     },
   ];
 
+  const tabs = [
+    { id: "todas", label: "Todos", count: cases.length },
+    { id: "pendentes", label: "A responder", count: cases.filter(c => c.status === "pendente").length },
+    { id: "respondidas", label: "Respondidos", count: cases.filter(c => c.status === "respondida").length },
+    { id: "devolvidas", label: "Devolvidos", count: cases.filter(c => c.status === "devolvida").length },
+  ];
+
   const filteredCases = cases.filter(caseItem => {
-    const matchesTab = activeTab === "pendentes" ? caseItem.status === "pendente" :
-                     activeTab === "respondidas" ? caseItem.status === "respondida" :
-                     caseItem.status === "devolvida";
-    
-    const matchesSearch = caseItem.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         caseItem.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
+    const matchesTab =
+      activeTab === "todas"
+        ? true
+        : activeTab === "pendentes"
+        ? caseItem.status === "pendente"
+        : activeTab === "respondidas"
+        ? caseItem.status === "respondida"
+        : caseItem.status === "devolvida";
+
+    const matchesSearch =
+      caseItem.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      caseItem.description.toLowerCase().includes(searchQuery.toLowerCase());
+
     return matchesTab && matchesSearch;
   });
-
-  const tabs = [
-    { id: "pendentes", label: "Para Responder", count: cases.filter(c => c.status === "pendente").length },
-    { id: "respondidas", label: "Respondidas", count: cases.filter(c => c.status === "respondida").length },
-    { id: "devolvidas", label: "Devolvidas", count: cases.filter(c => c.status === "devolvida").length },
-  ];
 
   return (
     <div className="min-h-screen bg-background pb-20">
       <Header />
-      
       <main className="p-4 space-y-6">
         {/* New Question Button */}
         <Button
@@ -84,25 +90,34 @@ const Dashboard = () => {
             placeholder="Buscar casos..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="medical-input pl-10"
+            className="medical-input pl-10 border border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
           />
         </div>
 
         {/* Tabs */}
-        <div className="flex bg-muted p-1 rounded-lg">
+        <div className="flex bg-blue-100 p-1 rounded-lg">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
-                activeTab === tab.id
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors
+                ${
+                  activeTab === tab.id
+                    ? "bg-white shadow-sm text-primary border border-primary"
+                    : "text-blue-900 hover:bg-blue-200 hover:text-blue-900"
+                }`}
+              style={{
+                borderWidth: activeTab === tab.id ? 1 : 0,
+                borderColor: activeTab === tab.id ? "#2563eb" : "transparent",
+              }}
             >
               {tab.label}
               {tab.count > 0 && (
-                <span className="ml-1 text-xs bg-primary text-primary-foreground rounded-full px-1.5 py-0.5">
+                <span
+                  className={`ml-1 text-xs rounded-full px-1.5 py-0.5
+                    ${activeTab === tab.id ? "bg-primary/10 text-primary" : "bg-blue-200 text-blue-900"}
+                  `}
+                >
                   {tab.count}
                 </span>
               )}
@@ -128,7 +143,6 @@ const Dashboard = () => {
           )}
         </div>
       </main>
-
       <BottomNavigation />
     </div>
   );

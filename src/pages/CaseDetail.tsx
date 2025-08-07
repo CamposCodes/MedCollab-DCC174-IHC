@@ -64,7 +64,7 @@ const CaseDetail = () => {
     <div className="min-h-screen bg-background pb-20">
       <Header title="Detalhes do Caso" showBack />
       
-      <main className="p-4 space-y-6">
+      <main className="px-2 sm:px-4 md:px-8 p-4 space-y-6">
         {/* Case Information */}
         <div className="medical-card">
           <div className="flex items-center justify-between mb-4">

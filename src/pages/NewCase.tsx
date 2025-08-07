@@ -54,14 +54,24 @@ const NewCase = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       <Header title="Nova Dúvida" showBack />
-      
-      <main className="p-4">
-        <form onSubmit={handleSubmit} className="space-y-6">
+
+      <main className="flex justify-center">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6 space-y-8 mt-6 mb-8 border border-blue-100"
+        >
+          <div className="text-center mb-2">
+            <h2 className="text-2xl font-bold text-primary mb-1">Registrar Nova Dúvida</h2>
+            <p className="text-muted-foreground text-sm">
+              Preencha os campos abaixo para registrar um novo caso clínico. Os dados do paciente são anônimos.
+            </p>
+          </div>
+
           {/* Specialty Selection */}
-          <div className="medical-card">
-            <h3 className="text-lg font-semibold mb-4">Especialidade</h3>
+          <div>
+            <Label className="block mb-2 font-semibold text-blue-900">Especialidade</Label>
             <Select value={formData.specialty} onValueChange={(value) => handleInputChange("specialty", value)}>
-              <SelectTrigger className="medical-input">
+              <SelectTrigger className="medical-input border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors">
                 <SelectValue placeholder="Selecione a especialidade" />
               </SelectTrigger>
               <SelectContent>
@@ -75,9 +85,9 @@ const NewCase = () => {
           </div>
 
           {/* Patient Data */}
-          <div className="medical-card">
-            <h3 className="text-lg font-semibold mb-4">Dados do Paciente (Anônimos)</h3>
-            <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label className="block mb-2 font-semibold text-blue-900">Dados do Paciente (Anônimos)</Label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="age" className="text-sm font-medium">Idade</Label>
                 <Input
@@ -85,13 +95,16 @@ const NewCase = () => {
                   placeholder="Ex: 45"
                   value={formData.patientAge}
                   onChange={(e) => handleInputChange("patientAge", e.target.value)}
-                  className="medical-input mt-1"
+                  className="medical-input mt-1 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
+                  type="number"
+                  min={0}
+                  max={120}
                 />
               </div>
               <div>
                 <Label htmlFor="gender" className="text-sm font-medium">Sexo</Label>
                 <Select value={formData.patientGender} onValueChange={(value) => handleInputChange("patientGender", value)}>
-                  <SelectTrigger className="medical-input mt-1">
+                  <SelectTrigger className="medical-input mt-1 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors">
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
@@ -105,23 +118,25 @@ const NewCase = () => {
           </div>
 
           {/* Case Description */}
-          <div className="medical-card">
-            <h3 className="text-lg font-semibold mb-4">Descrição do Caso</h3>
+          <div>
+            <Label className="block mb-2 font-semibold text-blue-900">Descrição do Caso</Label>
             <Textarea
               placeholder="Descreva o caso clínico detalhadamente..."
               value={formData.description}
               onChange={(e) => handleInputChange("description", e.target.value)}
-              className="medical-textarea"
+              className="medical-textarea border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
               rows={6}
+              required
             />
+            <span className="text-xs text-muted-foreground mt-1 block">
+              Não inclua informações que possam identificar o paciente.
+            </span>
           </div>
 
           {/* File Attachments */}
-          <div className="medical-card">
-            <h3 className="text-lg font-semibold mb-4">Anexar Arquivos (Imagens, PDFs)</h3>
-            
-            {/* Upload Area */}
-            <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
+          <div>
+            <Label className="block mb-2 font-semibold text-blue-900">Anexar Arquivos</Label>
+            <div className="border-2 border-dashed border-blue-200 rounded-lg p-6 text-center hover:border-blue-400 transition-colors bg-blue-50/30">
               <input
                 type="file"
                 id="file-upload"
@@ -134,20 +149,19 @@ const NewCase = () => {
                 htmlFor="file-upload"
                 className="cursor-pointer flex flex-col items-center gap-2"
               >
-                <Upload className="h-8 w-8 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  Clique para anexar ou arraste arquivos
+                <Upload className="h-8 w-8 text-blue-400" />
+                <span className="text-sm text-blue-700">
+                  Clique para anexar ou arraste arquivos (imagens, PDFs)
                 </span>
               </label>
             </div>
-
             {/* Attached Files */}
             {attachments.length > 0 && (
               <div className="mt-4 space-y-2">
                 {attachments.map((file, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-3 bg-primary/10 rounded-lg"
+                    className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-100"
                   >
                     <div className="flex items-center gap-3">
                       {getFileIcon(file)}
@@ -169,7 +183,12 @@ const NewCase = () => {
           </div>
 
           {/* Submit Button */}
-          <Button type="submit" variant="medical" size="medical" className="w-full">
+          <Button
+            type="submit"
+            variant="medical"
+            size="lg"
+            className="w-full mt-2 text-base font-semibold"
+          >
             Enviar Caso
           </Button>
         </form>

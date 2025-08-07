@@ -12,7 +12,15 @@ interface CaseCardProps {
   interactions: number;
 }
 
-const CaseCard = ({ id, title, description, status, specialty, createdAt, interactions }: CaseCardProps) => {
+const CaseCard = ({
+  id,
+  title,
+  description,
+  status,
+  specialty,
+  createdAt,
+  interactions,
+}: CaseCardProps) => {
   const getStatusConfig = (status: string) => {
     switch (status) {
       case "pendente":
@@ -41,8 +49,12 @@ const CaseCard = ({ id, title, description, status, specialty, createdAt, intera
   const statusConfig = getStatusConfig(status);
 
   return (
-    <Link to={`/case/${id}`}>
-      <div className="medical-card hover:shadow-medical-elevated transition-shadow cursor-pointer">
+    <Link
+      to={`/case/${id}`}
+      className="block focus:outline-none focus:ring-2 focus:ring-primary/40 rounded-xl transition-shadow hover:shadow-lg"
+      tabIndex={0}
+    >
+      <div className="bg-white rounded-xl shadow p-4 flex flex-col gap-2 border border-blue-200">
         {/* Header */}
         <div className="flex items-start justify-between mb-3">
           <span
@@ -53,27 +65,24 @@ const CaseCard = ({ id, title, description, status, specialty, createdAt, intera
           >
             {statusConfig.label}
           </span>
-          <div className="flex items-center gap-1 text-muted-foreground text-xs">
-            <Clock className="h-3 w-3" />
-            <span>{createdAt}</span>
-          </div>
+          <span className="flex items-center gap-1 text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded">
+            <Clock className="h-4 w-4" />
+            {createdAt}
+          </span>
         </div>
 
         {/* Content */}
         <div className="space-y-3">
-          <h3 className="font-semibold text-foreground leading-tight">{title}</h3>
+          <h3 className="font-bold text-lg leading-tight">{title}</h3>
           <p className="text-muted-foreground text-sm line-clamp-2">{description}</p>
-          
-          {/* Footer */}
-          <div className="flex items-center justify-between pt-2 border-t border-border">
-            <span className="text-sm font-medium text-primary">{specialty}</span>
-            {interactions > 0 && (
-              <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                <MessageCircle className="h-3 w-3" />
-                <span>{interactions}</span>
-              </div>
-            )}
-          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-end mt-2">
+          <span className="flex items-center gap-1 text-xs font-semibold bg-primary/10 text-primary px-2 py-1 rounded">
+            <MessageCircle className="w-4 h-4" />
+            {interactions}
+          </span>
         </div>
       </div>
     </Link>

@@ -67,7 +67,7 @@ const Profile = () => {
     <div className="min-h-screen bg-background pb-20">
       <Header title="Perfil" showBack />
       
-      <main className="p-4 space-y-6">
+      <main className="max-w-xl mx-auto p-2 sm:p-4 space-y-6">
         {/* Profile Header */}
         <div className="medical-card text-center">
           <Avatar className="h-20 w-20 mx-auto mb-4 border-2 border-primary/20">
@@ -81,16 +81,21 @@ const Profile = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex bg-muted p-1 rounded-lg">
+        <div className="flex bg-blue-100 p-1 rounded-lg">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors ${
-                activeTab === tab.id
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition-colors
+                ${
+                  activeTab === tab.id
+                    ? "bg-white shadow-sm text-primary border border-primary"
+                    : "text-blue-900 hover:bg-blue-200 hover:text-blue-900"
+                }`}
+              style={{
+                borderWidth: activeTab === tab.id ? 1 : 0,
+                borderColor: activeTab === tab.id ? "#2563eb" : "transparent",
+              }}
             >
               {tab.label}
             </button>
@@ -108,7 +113,7 @@ const Profile = () => {
                 id="name"
                 value={profileData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
               />
             </div>
             
@@ -119,7 +124,7 @@ const Profile = () => {
                 type="email"
                 value={profileData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
               />
             </div>
             
@@ -129,7 +134,7 @@ const Profile = () => {
                 id="function"
                 value={profileData.function}
                 onChange={(e) => handleInputChange("function", e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
               />
             </div>
             
@@ -152,7 +157,7 @@ const Profile = () => {
                   placeholder="Sua senha atual"
                   value={profileData.currentPassword}
                   onChange={(e) => handleInputChange("currentPassword", e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
                 />
                 <button
                   type="button"
@@ -173,7 +178,7 @@ const Profile = () => {
                   placeholder="Sua nova senha"
                   value={profileData.newPassword}
                   onChange={(e) => handleInputChange("newPassword", e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
                 />
                 <button
                   type="button"
@@ -194,7 +199,7 @@ const Profile = () => {
                   placeholder="Confirme sua nova senha"
                   value={profileData.confirmPassword}
                   onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border-blue-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-300 transition-colors"
                 />
                 <button
                   type="button"
@@ -220,7 +225,7 @@ const Profile = () => {
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 border border-border rounded-lg">
+              <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-white">
                 <div className="flex items-center gap-3">
                   <Bell className="h-5 w-5 text-primary" />
                   <div>
@@ -234,7 +239,7 @@ const Profile = () => {
                 />
               </div>
               
-              <div className="flex items-center justify-between p-4 border border-border rounded-lg">
+              <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-white">
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-primary" />
                   <div>
@@ -248,7 +253,7 @@ const Profile = () => {
                 />
               </div>
               
-              <div className="flex items-center justify-between p-4 border border-border rounded-lg">
+              <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-white">
                 <div className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-primary" />
                   <div>

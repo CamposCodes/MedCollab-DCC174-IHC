@@ -6,10 +6,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
-import Dashboard from "./pages/Dashboard";
-import NewCase from "./pages/NewCase";
-import CaseDetail from "./pages/CaseDetail";
-import Profile from "./pages/Profile";
+import Home from "@/pages/Home";
+import Dashboard from "@/pages/Dashboard";
+import Profile from "@/pages/Profile";
+import CaseDetail from "@/pages/CaseDetail";
+import NewCase from "@/pages/NewCase";
 import Help from "./pages/Help";
 import NotFound from "./pages/NotFound";
 
@@ -22,7 +23,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
