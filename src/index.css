@@ -46,7 +46,7 @@
     
     /* Form Elements */
     --border: 213 94% 68%; /* thin blue border */
-    --input: 0 0% 100%; /* white background for inputs */
+    --input: 0 0% 100%; /* #FFFFFF - white background for inputs */
     --ring: 213 94% 68%; /* match primary */
     
     /* Medical UI Specific */
