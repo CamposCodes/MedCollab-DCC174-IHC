@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Background & Surface Colors */
-    --background: 248 250 252; /* #F8FAFC - clean white/light gray */
+    --background: 213 46% 71%; /* #91B1D9 - branca azulada */
     --foreground: 222.2 84% 4.9%; /* dark text */
     
     /* Brand Colors */
