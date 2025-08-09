@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# Sistema de Telemedicina — Engenharia Cognitiva em IHC
 
-## Project info
+## Visão Geral
 
-**URL**: https://lovable.dev/projects/fba82a29-212f-4459-a876-9dc869bccc4e
+Este projeto é um protótipo de sistema de telemedicina desenvolvido para a disciplina DCC174 (Engenharia Cognitiva em IHC) da UFJF, por Felipe Lazzarini Cunha e Gabriel Campos Lima Alves.
 
-## How can I edit this code?
+O objetivo é facilitar a colaboração entre médicos generalistas, especialistas e estudantes de medicina, otimizando o registro e a resposta de dúvidas clínicas.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Como Rodar o Projeto
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fba82a29-212f-4459-a876-9dc869bccc4e) and start prompting.
+1. **Pré-requisitos:**  
+   - Docker instalado  
+   - Dev container configurado (Ubuntu 24.04.2 LTS)
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Clone o repositório:**
+   ```bash
+   git clone <url-do-repositorio>
+   cd medcollab-connect
+   ```
 
-**Use your preferred IDE**
+3. **Abra no VS Code e inicie o Dev Container:**  
+   - Abra a pasta no VS Code  
+   - Use a opção "Reabrir no Container"  
+   - Aguarde a inicialização
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+4. **Instale as dependências (se necessário):**
+   ```bash
+   # Exemplo para Node.js
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+5. **Rode o projeto:**
+   ```bash
+   # Exemplo para Node.js
+   npm run dev
+   ```
 
-Follow these steps:
+6. **Acesse no navegador:**  
+   O endereço padrão é `http://localhost:3000` (ajuste conforme sua stack).
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Principais Funcionalidades
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Registro de Dúvidas Clínicas:**  
+  Médicos generalistas podem registrar dúvidas preenchendo formulário e anexando arquivos.
+- **Colaboração na Resposta:**  
+  Especialistas e estudantes recebem, analisam e respondem dúvidas de forma colaborativa.
+- **Notificações e Feedback:**  
+  Usuários são notificados sobre respostas e podem registrar feedback.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## Perfis de Usuário
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Médico Generalista (UBS):**  
+  Profissionais sobrecarregados que buscam respostas rápidas de especialistas.
+- **Docente Especialista:**  
+  Professores da Faculdade de Medicina da UFJF que supervisionam e respondem dúvidas clínicas.
+- **Estudante de Medicina:**  
+  Estagiários interessados em aprendizado prático com casos reais.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Personas
 
-## What technologies are used for this project?
+- **Dra. Ana Souza:**  
+  Médica generalista, 38 anos, busca respostas rápidas e seguras.
+- **Dr. Ricardo Borges:**  
+  Docente especialista, 55 anos, valoriza detalhes nos casos e acompanhamento dos estudantes.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Metas de Design
 
-## How can I deploy this project?
+- **Eficiência Cognitiva:**  
+  Interfaces intuitivas para reduzir carga cognitiva.
+- **Usabilidade:**  
+  Fácil de usar, mesmo para quem tem pouca experiência técnica.
+- **Comunicabilidade:**  
+  Feedback claro sobre o estado do sistema (ex: "Enviando dúvida...").
 
-Simply open [Lovable](https://lovable.dev/projects/fba82a29-212f-4459-a876-9dc869bccc4e) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Cenários de Uso
 
-Yes, you can!
+1. **Registro de Dúvida Clínica:**  
+   Dra. Ana preenche formulário e anexa arquivos.
+2. **Colaboração na Resposta:**  
+   Dr. Ricardo e estudantes analisam e respondem.
+3. **Revisão da Resposta:**  
+   Dra. Ana recebe notificação, lê a resposta e pode registrar feedback.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Modelagem de Tarefas (HTA)
+
+- **Registrar Dúvida Clínica:**  
+  Login → Registrar Dúvida → Preencher Formulário → Anexar Arquivos → Enviar
+- **Colaborar na Resposta:**  
+  Login → Acessar Dúvidas → Selecionar Caso → Analisar Dados → Enviar Resposta
+- **Revisar Resposta:**  
+  Receber Notificação → Abrir Dúvida → Ler Orientação → Aplicar → (Opcional) Feedback
+
+---
+
+## Protótipos
+
+- **Protótipo de alta fidelidade:**  
+  Disponível neste repositório.
+- **Wireframes e protótipos (baixa/média fidelidade):**  
+  Disponíveis no Figma (link no repositório ou solicite aos autores).
+- **Exemplo de tela:**  
+  Tela "Novo Caso" com campos para especialidade, dados do paciente, descrição e anexos.
+
+---
+
+## Grupo
+
+- Felipe Lazzarini Cunha - M:
+- Gabriel Campos Lima Alves - M: 202176005
+
+Disciplina DCC174 — UFJF  
+
