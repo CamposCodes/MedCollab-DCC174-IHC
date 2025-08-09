@@ -53,7 +53,7 @@ const Login = () => {
                 placeholder="Seu email ou nome de usuário"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                 required
               />
             </div>
@@ -70,7 +70,7 @@ const Login = () => {
                   placeholder="Sua senha"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                   required
                 />
                 <button

@@ -66,7 +66,7 @@ const Register = () => {
                 placeholder="Seu nome completo"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                 required
               />
             </div>
@@ -82,7 +82,7 @@ const Register = () => {
                 placeholder="Seu endereço de e-mail"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="medical-input mt-1"
+                className="medical-input mt-1 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                 required
               />
             </div>
@@ -99,7 +99,7 @@ const Register = () => {
                   placeholder="Sua senha"
                   value={formData.password}
                   onChange={(e) => handleInputChange("password", e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                   required
                 />
                 <button
@@ -124,7 +124,7 @@ const Register = () => {
                   placeholder="Confirme sua senha"
                   value={formData.confirmPassword}
                   onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                  className="medical-input pr-10"
+                  className="medical-input pr-10 border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-3 py-2"
                   required
                 />
                 <button
