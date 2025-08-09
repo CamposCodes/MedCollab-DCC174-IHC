@@ -42,6 +42,13 @@ O objetivo é facilitar a colaboração entre médicos generalistas, especialist
 
 ---
 
+## Acesse Online
+
+O sistema está disponível em produção em:  
+👉 [https://medcollab-connect.vercel.app/](https://medcollab-connect.vercel.app/)
+
+---
+
 ## Principais Funcionalidades
 
 - **Registro de Dúvidas Clínicas:**  
@@ -122,5 +129,5 @@ O objetivo é facilitar a colaboração entre médicos generalistas, especialist
 - Felipe Lazzarini Cunha - M:
 - Gabriel Campos Lima Alves - M: 202176005
 
-Disciplina DCC174 — UFJF  
+Disciplina DCC174 — UFJF
 
