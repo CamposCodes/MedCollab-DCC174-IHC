@@ -126,7 +126,7 @@ O sistema está disponível em produção em:
 
 ## Grupo
 
-- Felipe Lazzarini Cunha - M:
+- Felipe Lazzarini Cunha - M: 201876040
 - Gabriel Campos Lima Alves - M: 202176005
 
 Disciplina DCC174 — UFJF
