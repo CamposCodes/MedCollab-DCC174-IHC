@@ -1,133 +1,131 @@
-# Sistema de Telemedicina — Engenharia Cognitiva em IHC
+<p align="center">
+  <a href="https://www.ufjf.br" rel="noopener" target="_blank">
+    <img width="261" height="148" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Logo_da_UFJF.png/640px-Logo_da_UFJF.png" alt="Logo UFJF" />
+  </a>
+  
+  <br/>
+  <img src="public/placeholder.svg" alt="Banner do projeto" width="480" />
+  
+</p>
 
-## Visão Geral
+<h1 align="center">MedCollab Connect</h1>
+<p align="center">Sistema de Telemedicina — Engenharia Cognitiva em IHC (DCC174/UFJF)</p>
 
-Este projeto é um protótipo de sistema de telemedicina desenvolvido para a disciplina DCC174 (Engenharia Cognitiva em IHC) da UFJF, por Felipe Lazzarini Cunha e Gabriel Campos Lima Alves.
+<div align="center">
 
-O objetivo é facilitar a colaboração entre médicos generalistas, especialistas e estudantes de medicina, otimizando o registro e a resposta de dúvidas clínicas.
+  <!-- Status -->
+  <a href="#"><img alt="Status" src="https://img.shields.io/badge/status-active-success.svg"></a>
+  <!-- Deploy -->
+  <a href="https://medcollab-connect.vercel.app" target="_blank"><img alt="Deploy" src="https://img.shields.io/badge/deploy-Vercel-000?logo=vercel"></a>
+  <!-- Tech badges -->
+  <img alt="React" src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" />
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" />
+  <img alt="Tailwind" src="https://img.shields.io/badge/TailwindCSS-3-06B6D4?logo=tailwindcss&logoColor=white" />
+  <img alt="shadcn/ui" src="https://img.shields.io/badge/shadcn/ui-%20-111827" />
 
----
-
-## Como Rodar o Projeto
-
-1. **Pré-requisitos:**  
-   - Docker instalado  
-   - Dev container configurado (Ubuntu 24.04.2 LTS)
-
-2. **Clone o repositório:**
-   ```bash
-   git clone <url-do-repositorio>
-   cd medcollab-connect
-   ```
-
-3. **Abra no VS Code e inicie o Dev Container:**  
-   - Abra a pasta no VS Code  
-   - Use a opção "Reabrir no Container"  
-   - Aguarde a inicialização
-
-4. **Instale as dependências (se necessário):**
-   ```bash
-   # Exemplo para Node.js
-   npm install
-   ```
-
-5. **Rode o projeto:**
-   ```bash
-   # Exemplo para Node.js
-   npm run dev
-   ```
-
-6. **Acesse no navegador:**  
-   O endereço padrão é `http://localhost:3000` (ajuste conforme sua stack).
+</div>
 
 ---
 
-## Acesse Online
+## 📝 Sumário
+- [Sobre](#about)
+- [Informações iniciais](#getting_started)
+- [Deploy](#deployment)
+- [Utilização](#usage)
+- [Tecnologias](#built_using)
+- [Autores](#authors)
+- [Menções](#acknowledgement)
 
-O sistema está disponível em produção em:  
-👉 [https://medcollab-connect.vercel.app/](https://medcollab-connect.vercel.app/)
+## 🧐 Sobre <a name = "about"></a>
+Plataforma web para colaboração entre médicos generalistas, especialistas e estudantes. O foco é reduzir a carga cognitiva no registro, triagem e resposta de dúvidas clínicas, apoiando decisões com uma interface clara e responsiva.
 
----
+Principais objetivos:
+- Facilitar o registro de casos/dúvidas com anexos;
+- Promover colaboração ágil entre especialistas e estudantes;
+- Fornecer feedback e acompanhamento de respostas.
 
-## Principais Funcionalidades
+## 🏁 Informações iniciais <a name = "getting_started"></a>
+Pré-requisitos:
+- Node.js 18+ (Vite 5)
+- Gerenciador de pacotes (npm, pnpm ou bun)
 
-- **Registro de Dúvidas Clínicas:**  
-  Médicos generalistas podem registrar dúvidas preenchendo formulário e anexando arquivos.
-- **Colaboração na Resposta:**  
-  Especialistas e estudantes recebem, analisam e respondem dúvidas de forma colaborativa.
-- **Notificações e Feedback:**  
-  Usuários são notificados sobre respostas e podem registrar feedback.
+Clonar e instalar:
+```bash
+git clone <url-do-repositorio>
+cd medcollab-connect
 
----
+# com npm
+npm install
+# ou pnpm
+# pnpm install
+# ou bun
+# bun install
+```
 
-## Perfis de Usuário
+Ambiente de desenvolvimento (porta 8080):
+```bash
+npm run dev
+# Abra: http://localhost:8080
+```
 
-- **Médico Generalista (UBS):**  
-  Profissionais sobrecarregados que buscam respostas rápidas de especialistas.
-- **Docente Especialista:**  
-  Professores da Faculdade de Medicina da UFJF que supervisionam e respondem dúvidas clínicas.
-- **Estudante de Medicina:**  
-  Estagiários interessados em aprendizado prático com casos reais.
+Build e preview local (preview na porta 4173):
+```bash
+npm run build
+npm run preview
+# Abra: http://localhost:4173
+```
 
----
+Lint (opcional):
+```bash
+npm run lint
+```
 
-## Personas
+> Dica: O projeto possui configuração de Dev Container (Ubuntu 24.04.2 LTS). Abrir no VS Code e “Reabrir no Container” garante ambiente consistente.
 
-- **Dra. Ana Souza:**  
-  Médica generalista, 38 anos, busca respostas rápidas e seguras.
-- **Dr. Ricardo Borges:**  
-  Docente especialista, 55 anos, valoriza detalhes nos casos e acompanhamento dos estudantes.
+## 🚀 Deploy <a name = "deployment"></a>
+Produção (Vercel):
 
----
+👉 https://medcollab-connect.vercel.app/
 
-## Metas de Design
+Deploy local rápido:
+```bash
+# Build de produção
+npm run build
 
-- **Eficiência Cognitiva:**  
-  Interfaces intuitivas para reduzir carga cognitiva.
-- **Usabilidade:**  
-  Fácil de usar, mesmo para quem tem pouca experiência técnica.
-- **Comunicabilidade:**  
-  Feedback claro sobre o estado do sistema (ex: "Enviando dúvida...").
+# Servir build localmente
+npm run preview
+```
 
----
+## 🎈 Utilização <a name="usage"></a>
+Fluxos principais da UI:
+- Registrar novo caso: página “Novo Caso” com especialidade, dados do paciente, descrição e anexos;
+- Acompanhar casos: “Dashboard” com filtros e status (pendente/atendido/devolvido);
+- Detalhar e responder: “Detalhes do Caso” para análise e envio de orientação;
+- Perfil e preferências: “Perfil” para dados do usuário e tema (claro/escuro);
+- Acesso: “Login” e “Cadastro”.
 
-## Cenários de Uso
+Capturas (exemplo):
 
-1. **Registro de Dúvida Clínica:**  
-   Dra. Ana preenche formulário e anexa arquivos.
-2. **Colaboração na Resposta:**  
-   Dr. Ricardo e estudantes analisam e respondem.
-3. **Revisão da Resposta:**  
-   Dra. Ana recebe notificação, lê a resposta e pode registrar feedback.
+<p>
+  <img src="public/placeholder.svg" alt="Screenshot 1" width="320" />
+  <img src="public/placeholder.svg" alt="Screenshot 2" width="320" />
+</p>
 
----
+## ⛏️ Tecnologias <a name = "built_using"></a>
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- [React Router](https://reactrouter.com/) para navegação
+- [TanStack Query](https://tanstack.com/query/latest) para dados/estado server
+- [Zod](https://zod.dev/) e [React Hook Form](https://react-hook-form.com/) para formulários/validação
+- [Recharts](https://recharts.org/) e [date-fns](https://date-fns.org/)
+- [Lucide Icons](https://lucide.dev/) e [sonner](https://sonner.emilkowal.ski/) para toasts
 
-## Modelagem de Tarefas (HTA)
+## ✍️ Autores <a name = "authors"></a>
+- Felipe Lazzarini Cunha — DCC174/UFJF
+- Gabriel Campos Lima Alves ([@CamposCodes](https://github.com/CamposCodes)) — DCC174/UFJF
 
-- **Registrar Dúvida Clínica:**  
-  Login → Registrar Dúvida → Preencher Formulário → Anexar Arquivos → Enviar
-- **Colaborar na Resposta:**  
-  Login → Acessar Dúvidas → Selecionar Caso → Analisar Dados → Enviar Resposta
-- **Revisar Resposta:**  
-  Receber Notificação → Abrir Dúvida → Ler Orientação → Aplicar → (Opcional) Feedback
-
----
-
-## Protótipos
-
-- **Protótipo de alta fidelidade:**  
-  Disponível neste repositório.
-- **Wireframes e protótipos (baixa/média fidelidade):**  
-  Disponíveis no Figma (link no repositório ou solicite aos autores).
-- **Exemplo de tela:**  
-  Tela "Novo Caso" com campos para especialidade, dados do paciente, descrição e anexos.
-
----
-
-## Grupo
-
-- Felipe Lazzarini Cunha - M: 201876040
-- Gabriel Campos Lima Alves - M: 202176005
-
-Disciplina DCC174 — UFJF
+## 🎉 Menções <a name = "acknowledgement"></a>
+- Disciplina DCC174 — Engenharia Cognitiva em IHC (UFJF)
+- Agradecimentos à comunidade shadcn/ui e Radix pelos componentes acessíveis
 
