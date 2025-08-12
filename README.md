@@ -3,9 +3,6 @@
     <img width="261" height="148" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Logo_da_UFJF.png/640px-Logo_da_UFJF.png" alt="Logo UFJF" />
   </a>
   
-  <br/>
-  <img src="public/placeholder.svg" alt="Banner do projeto" width="480" />
-  
 </p>
 
 <h1 align="center">MedCollab Connect</h1>
@@ -105,13 +102,6 @@ Fluxos principais da UI:
 - Perfil e preferências: “Perfil” para dados do usuário e tema (claro/escuro);
 - Acesso: “Login” e “Cadastro”.
 
-Capturas (exemplo):
-
-<p>
-  <img src="public/placeholder.svg" alt="Screenshot 1" width="320" />
-  <img src="public/placeholder.svg" alt="Screenshot 2" width="320" />
-</p>
-
 ## ⛏️ Tecnologias <a name = "built_using"></a>
 - [React](https://react.dev/) + [Vite](https://vitejs.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
@@ -122,8 +112,8 @@ Capturas (exemplo):
 - [Lucide Icons](https://lucide.dev/) e [sonner](https://sonner.emilkowal.ski/) para toasts
 
 ## ✍️ Autores <a name = "authors"></a>
-- Felipe Lazzarini Cunha — DCC174/UFJF
-- Gabriel Campos Lima Alves ([@CamposCodes](https://github.com/CamposCodes)) — DCC174/UFJF
+- Felipe Lazzarini Cunha — M: 201876040 — DCC174/UFJF
+- Gabriel Campos Lima Alves ([@CamposCodes](https://github.com/CamposCodes)) — M: 202176005 — DCC174/UFJF
 
 ## 🎉 Menções <a name = "acknowledgement"></a>
 - Disciplina DCC174 — Engenharia Cognitiva em IHC (UFJF)
